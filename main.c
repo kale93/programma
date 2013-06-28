@@ -7,6 +7,7 @@ struct dato
     char regione[31], area;
     int mese;
 };
+
 int main(int argc, char *argv[])
 {
     struct dato s;
@@ -23,22 +24,23 @@ int main(int argc, char *argv[])
     int i, max=0, min;
     int pos_max, pos_min;
 
-
     if (argc!=2)
     {
-        printf("Errore dati inseriti!");
-        exit(-1);
+        printf("usage: ./main path\n");
+        exit(1);
     }
     fp = fopen(argv[1], "r");
     if (fp== NULL)
     {
-        printf("Errore file!");
-        exit(-1);
+        printf("fatal: cannot open input file\n");
+        exit(1);
     }
+
     while (!feof(fp))
     {
         fgets(riga, 1000, fp);
-        sscanf(riga, "%*s %*s %s %*2d/%2d/%*4d %c", s.regione, &s.mese, &s.area);
+        sscanf(riga, "%*s %*s %s %*2d/%2d/%*4d %c", s.regione,
+               &s.mese, &s.area);
         if (cont == 0)
         {
             cont++;
@@ -90,7 +92,6 @@ int main(int argc, char *argv[])
             }
             flag_mese=0;
         }
-
     }
 
     for (i=0; i<quanti_mesi; i++)
@@ -135,7 +136,8 @@ int main(int argc, char *argv[])
             pos_min = i;
         }
     }
-    printf("%-20s %-30s %s\n", "Regione", "N.Studenti Ingegneria", "N.Studenti Architettura");
+    printf("%-20s %-30s %s\n", "Regione", "N.Studenti Ingegneria",
+           "N.Studenti Architettura");
     for (i=0; i<cont;i++)
     {
         printf("%-20s %-30d %d\n", regione_file[i], num_ing[i], num_arc[i]);
@@ -143,7 +145,7 @@ int main(int argc, char *argv[])
     printf("%-20s %s\n", "Mese", "N.Studenti Immatricolati in totale");
     for (i=0; i<cont; i++)
     {
-     printf("%-20s %d\n", mese_stringhe[i], cont_mese[i]);
+        printf("%-20s %d\n", mese_stringhe[i], cont_mese[i]);
     }
     printf("Max studenti è %s\n", regione_file[pos_max]);
     printf("Min studenti è %s\n", regione_file[pos_min]);
