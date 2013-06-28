@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
     printf("%-20s %s\n", "Mese", "N.Studenti Immatricolati in totale");
     for (i=0; i<cont; i++)
     {
-     printf("%-20s %d\n", mese_stringhe[i], cont_mese[i]);
+        printf("%-20s %d\n", mese_stringhe[i], cont_mese[i]);
     }
     printf("Max studenti è %s\n", regione_file[pos_max]);
     printf("Min studenti è %s\n", regione_file[pos_min]);
