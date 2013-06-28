@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     if (argc!=2)
     {
-        printf("Errore dati inseriti!");
+        printf("usage: ./main path\n");
         exit(-1);
     }
     fp = fopen(argv[1], "r");
