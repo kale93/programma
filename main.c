@@ -136,7 +136,8 @@ int main(int argc, char *argv[])
             pos_min = i;
         }
     }
-    printf("%-20s %-30s %s\n", "Regione", "N.Studenti Ingegneria", "N.Studenti Architettura");
+    printf("%-20s %-30s %s\n", "Regione", "N.Studenti Ingegneria",
+           "N.Studenti Architettura");
     for (i=0; i<cont;i++)
     {
         printf("%-20s %-30d %d\n", regione_file[i], num_ing[i], num_arc[i]);
