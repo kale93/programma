@@ -39,7 +39,8 @@ int main(int argc, char *argv[])
     while (!feof(fp))
     {
         fgets(riga, 1000, fp);
-        sscanf(riga, "%*s %*s %s %*2d/%2d/%*4d %c", s.regione, &s.mese, &s.area);
+        sscanf(riga, "%*s %*s %s %*2d/%2d/%*4d %c", s.regione,
+               &s.mese, &s.area);
         if (cont == 0)
         {
             cont++;
