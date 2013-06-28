@@ -27,13 +27,13 @@ int main(int argc, char *argv[])
     if (argc!=2)
     {
         printf("usage: ./main path\n");
-        exit(-1);
+        exit(1);
     }
     fp = fopen(argv[1], "r");
     if (fp== NULL)
     {
         printf("fatal: cannot open input file\n");
-        exit(-1);
+        exit(1);
     }
     while (!feof(fp))
     {
