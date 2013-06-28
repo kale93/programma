@@ -2,5 +2,6 @@
 .PHONY: all clean
 all:
 	cc -Wall -o main main.c
+	cc -Wall -o overflow overflow.c
 clean:
 	rm -f -- main
