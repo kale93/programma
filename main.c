@@ -7,6 +7,7 @@ struct dato
     char regione[31], area;
     int mese;
 };
+
 int main(int argc, char *argv[])
 {
     struct dato s;
@@ -23,7 +24,6 @@ int main(int argc, char *argv[])
     int i, max=0, min;
     int pos_max, pos_min;
 
-
     if (argc!=2)
     {
         printf("usage: ./main path\n");
@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
         printf("fatal: cannot open input file\n");
         exit(1);
     }
+
     while (!feof(fp))
     {
         fgets(riga, 1000, fp);
@@ -90,7 +91,6 @@ int main(int argc, char *argv[])
             }
             flag_mese=0;
         }
-
     }
 
     for (i=0; i<quanti_mesi; i++)
