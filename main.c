@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     fp = fopen(argv[1], "r");
     if (fp== NULL)
     {
-        printf("Errore file!");
+        printf("fatal: cannot open input file\n");
         exit(-1);
     }
     while (!feof(fp))
