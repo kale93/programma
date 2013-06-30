@@ -93,6 +93,8 @@ int main(int argc, char *argv[])
             flag_mese=0;
         }
     }
+    
+    fclose(fp);
 
     for (i=0; i<quanti_mesi; i++)
     {
