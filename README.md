@@ -1,3 +1,3 @@
 programma
 =========
-Qui metterò il mio programma :-)
+Esempio progrmma in c
